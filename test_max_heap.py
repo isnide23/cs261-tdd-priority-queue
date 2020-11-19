@@ -26,69 +26,69 @@ class TestMaxHeap(unittest.TestCase):
     A heap stores its data in an array, such as a Python list.
     """
 
-    # def test_internal_data(self):
-    #     """
-    #     A MaxHeap uses an array (a dynamic array / Python list) to store its data.
-    #     """
-    #     h = MaxHeap()
-    #     self.assertEqual(list, type(h._data))
-    #     self.assertEqual(0, len(h._data))
+    def test_internal_data(self):
+        """
+        A MaxHeap uses an array (a dynamic array / Python list) to store its data.
+        """
+        h = MaxHeap()
+        self.assertEqual(list, type(h._data))
+        self.assertEqual(0, len(h._data))
 
     """
     Size is the number of items in the heap.
     """
 
-    # def test_size_initial(self):
-    #     """
-    #     The _size() of a new heap is 0.
-    #     """
-    #     h = MaxHeap()
-    #     self.assertEqual(0, h._size())
+    def test_size_initial(self):
+        """
+        The _size() of a new heap is 0.
+        """
+        h = MaxHeap()
+        self.assertEqual(0, h._size())
 
-    # def test_size_data(self):
-    #     """
-    #     The _size() of a heap is equal to the number of values in its list.
-    #     """
-    #     h = MaxHeap()
-    #     h._data.append('fake')
-    #     self.assertEqual(1, h._size())
-    #     h._data.append('fake')
-    #     self.assertEqual(2, h._size())
-    #     h._data.pop()
-    #     self.assertEqual(1, h._size())
+    def test_size_data(self):
+        """
+        The _size() of a heap is equal to the number of values in its list.
+        """
+        h = MaxHeap()
+        h._data.append('fake')
+        self.assertEqual(1, h._size())
+        h._data.append('fake')
+        self.assertEqual(2, h._size())
+        h._data.pop()
+        self.assertEqual(1, h._size())
 
     """
     Emptiness. A warm-up. Good to know, and a handy abstraction that you might
     use elsewhere.
     """
 
-    # def test_empty_initial(self):
-    #     """
-    #     A new heap is empty.
-    #     Hint: _size is a convenient abstraction, and helps avoid repetitive code.
-    #     """
-    #     h = MaxHeap()
-    #     self.assertTrue(h._is_empty())
+    def test_empty_initial(self):
+        """
+        A new heap is empty.
+        Hint: _size is a convenient abstraction, and helps avoid repetitive code.
+        """
+        h = MaxHeap()
+        self.assertTrue(h._is_empty())
 
-    # def test_not_empty(self):
-    #     """
-    #     A heap is not empty if there are items in its data list.
-    #     """
-    #     h = MaxHeap()
-    #     h._data.append('fake')
-    #     self.assertFalse(h._is_empty())
-    #     h._data.append('fake')
-    #     self.assertFalse(h._is_empty())
+    def test_not_empty(self):
+        """
+        A heap is not empty if there are items in its data list.
+        """
+        h = MaxHeap()
+        h._data.append('fake')
+        self.assertFalse(h._is_empty())
+        h._data.append('fake')
+        self.assertFalse(h._is_empty())
 
-    # def test_empty(self):
-    #     """
-    #     A heap with no items in its data list is empty.
-    #     """
-    #     h = MaxHeap()
-    #     h._data.append('fake')
-    #     h._data.append('fake')
-    #     h._data = []
-    #     self.assertTrue(h._is_empty())
+    def test_empty(self):
+        """
+        A heap with no items in its data list is empty.
+        """
+        h = MaxHeap()
+        h._data.append('fake')
+        h._data.append('fake')
+        h._data = []
+        self.assertTrue(h._is_empty())
 
     """
     Last index. The index of the last element in the heap.
@@ -96,54 +96,54 @@ class TestMaxHeap(unittest.TestCase):
     moves the last element to the root position. So this will be handy.
     """
 
-    # def test_last_index_initial(self):
-    #     """
-    #     The 'last index' of an empty heap happens to be -1.
-    #     Hint: Easy to calculate if you know its size.
-    #     """
-    #     h = MaxHeap()
-    #     self.assertEqual(-1, h._last_index())
+    def test_last_index_initial(self):
+        """
+        The 'last index' of an empty heap happens to be -1.
+        Hint: Easy to calculate if you know its size.
+        """
+        h = MaxHeap()
+        self.assertEqual(-1, h._last_index())
 
-    # def test_last_index_one(self):
-    #     """
-    #     The last index of a heap with one element is 0.
-    #     Hint: Easy, if you know how to determine the last index of a list.
-    #     """
-    #     h = MaxHeap()
-    #     h._data.append('fake')
-    #     self.assertEqual(0, h._last_index())
+    def test_last_index_one(self):
+        """
+        The last index of a heap with one element is 0.
+        Hint: Easy, if you know how to determine the last index of a list.
+        """
+        h = MaxHeap()
+        h._data.append('fake')
+        self.assertEqual(0, h._last_index())
 
-    # def test_last_index_two(self):
-    #     """
-    #     The last index of a heap with two elements is 1.
-    #     """
-    #     h = MaxHeap()
-    #     h._data.append('fake')
-    #     h._data.append('fake')
-    #     self.assertEqual(1, h._last_index())
+    def test_last_index_two(self):
+        """
+        The last index of a heap with two elements is 1.
+        """
+        h = MaxHeap()
+        h._data.append('fake')
+        h._data.append('fake')
+        self.assertEqual(1, h._last_index())
 
-    # def test_last_index_42(self):
-    #     """
-    #     The last index of a heap with forty-two elements is 41.
-    #     """
-    #     h = MaxHeap()
-    #     for _ in range(42):
-    #         h._data.append('fake')
-    #     self.assertEqual(41, h._last_index())
+    def test_last_index_42(self):
+        """
+        The last index of a heap with forty-two elements is 41.
+        """
+        h = MaxHeap()
+        for _ in range(42):
+            h._data.append('fake')
+        self.assertEqual(41, h._last_index())
 
     """
     Value at an index. It's handy to grab a value at a particular index, so lets
     encapsulate this work into a method.
     """
 
-    # def test_value_at_zero(self):
-    #     """
-    #     The value at index 0 is the value of the 0th item in the heap's data list.
-    #     """
-    #     h = MaxHeap()
-    #     value = fake_value()
-    #     h._data.append(value)
-    #     self.assertEqual(value, h._value_at(0))
+    def test_value_at_zero(self):
+        """
+        The value at index 0 is the value of the 0th item in the heap's data list.
+        """
+        h = MaxHeap()
+        value = fake_value()
+        h._data.append(value)
+        self.assertEqual(value, h._value_at(0))
 
     # def test_value_at(self):
     #     """

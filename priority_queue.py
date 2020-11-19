@@ -2,10 +2,16 @@
 # If you use a binary heap, it'll do most of the work, leaving this
 # implementation quite trivial.
 # Your implementation should pass the tests in test_priority_queue.py.
-# YOUR NAME
+# Ian Snyder
 
 from max_heap import MaxHeap
 
 class PriorityQueue:
 
-    pass
+    def __init__(self):
+        self.heap = []
+
+
+
+
+    

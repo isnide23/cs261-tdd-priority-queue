@@ -23,7 +23,30 @@ class MaxHeap:
          return self._size() - 1
 
    def _value_at(self, index):
-      pass
+      if index >= self._size():
+         raise IndexError("no index found")
+      else:
+         return self._data[index]
+
+   def _left_child_index(self, parent_index):
+      return 2 * parent_index + 1
+
+   def _right_child_index(self, parent_index):
+      return 2 * parent_index + 2
+
+   def _parent_index(self, child_index):
+      if child_index == 0:
+         return -1
+      else:
+         return (child_index - 1) // 2
+
+   def _parent(self, child_index):
+      return self._data[self._parent_index(child_index)]
+
+      
+   
+
+
 
    
 

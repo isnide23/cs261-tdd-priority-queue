@@ -41,7 +41,17 @@ class MaxHeap:
          return (child_index - 1) // 2
 
    def _parent(self, child_index):
-      return self._data[self._parent_index(child_index)]
+      if self._is_empty() is True:
+         raise IndexError("no index found")
+      else:
+         return self._data[self._parent_index(child_index)]
+
+   def _left_child(self, child_index):
+      if self._left_child_index(child_index) > self._size():
+         return None
+      else:
+         return self._data[self._left_child_index(child_index)]
+
 
       
    
